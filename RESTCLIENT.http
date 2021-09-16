@@ -1,3 +1,17 @@
-GET http://localhost:3000/api/v1 
+GET http://localhost:3000/api/v1/users
 Content-Type:   application/json    
 
+###
+
+GET http://localhost:3000/api/v1/users/e97d0e51-459e-4a67-bcea-0ec56553f6c0
+
+###
+
+POST http://localhost:3000/api/v1/users/
+Content-Type:   application/json
+
+{
+    "username": "John Doe",
+    "email": "test@test.fr",
+    "password": "test"
+}

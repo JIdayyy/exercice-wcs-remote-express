@@ -7,9 +7,9 @@ const UserSchema = new Schema({
   password: String,
 });
 
-export interface IUser extends mongoose.Document {
+export interface IUser {
   username: string;
-  password?: number;
+  password?: string;
 }
 const User = mongoose.model<IUser>("User", UserSchema);
 export default User;
