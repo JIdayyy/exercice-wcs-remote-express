@@ -1,13 +1,12 @@
 import { UserHandler } from "./interfaces";
-import { prisma } from "../../../prisma/prisma";
+import User from "../../../Models/User";
 
 const getAll: UserHandler["getAll"] = async (req, res, next) => {
   try {
-    const users = await prisma.user.findMany();
+    const users = await User.find();
     res.status(200).json(
       users.map((user) => {
-        const { password, ...rest } = user;
-        return rest;
+        return user;
       })
     );
   } catch (error) {

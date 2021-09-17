@@ -10,8 +10,8 @@ const getOne: UserHandler["getOne"] = async (req, res, next) => {
       },
       rejectOnNotFound: true,
     });
-    const { password, ...userWithoutPassword } = user;
-    res.status(200).json(userWithoutPassword);
+
+    res.status(200).json(user);
   } catch (error) {
     next(error);
   }
